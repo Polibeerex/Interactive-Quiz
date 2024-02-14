@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Web Development Quiz</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <section id="settings">
+            <div class="setting-button" id="mute-button"><i class="fa-xl fa-solid fa-volume-up"
+                    id="mute-button-icon"></i></div>
+        </section>
+        <h1>Interactive Web Development Quiz</h1>
+        <p>Test your web development knowledge with our interactive quiz!</p>
+
+    </header>
+
+    <main>
+        <!-- Progress Bar -->
+        <section id="progress-bar">
+            <div id="progress-line"></div>
+            <p id="current-question">Question: 1 / 10</p>
+        </section>
+
+        <!-- Quiz Container -->
+        <section id="quiz-container">
+            <div id="question">
+                <h2>Question will appear here</h2>
+                <!-- Options will be dynamically populated here -->
+            </div>
+            <button id="next-question">Next question</button>
+        </section>
+
+        <!-- Result -->
+        <section id="result">
+            <h2>Answer all the questions to see your score</h2>
+        </section>
+    </main>
+
+    <footer>
+        <p>Created with ❤️ by <a href="https://polibeerex.github.io/Personal-Website/">Andrii Ovchynnikov</a></p>
+    </footer>
+
+    <!-- Audio -->
+    <audio id="bg-music" autoplay loop>
+        <source src="./sound/relax.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <!-- JavaScript -->
+    <script src="https://kit.fontawesome.com/d31c164a88.js" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
