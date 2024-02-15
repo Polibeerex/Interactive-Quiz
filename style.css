@@ -3,7 +3,7 @@
 body {
   font-family: "Ubuntu Mono", "Roboto", sans-serif;
   background-color: #f5f5f5;
-  color: #333;
+  color: #444444;
   margin: 0;
   padding: 0;
   padding-bottom: 70px; /* This prevents the footer from overlapping the content */
@@ -90,9 +90,12 @@ a {
   align-items: center;
   width: 50px;
   height: 50px;
-  border-radius: 25px;
-  background: linear-gradient(225deg, #667eea, #9f7aea);
-  box-shadow: -4px 4px 20px rgb(63, 40, 87), 4px -4px 20px #9987da;
+  border-radius: 50%;
+  background: linear-gradient(225deg, #dacdff, #8b78b8);
+}
+
+#mute-button-icon {
+  color: rgb(65, 65, 65);
 }
 
 #progress-bar {
@@ -115,7 +118,6 @@ a {
   right: 10px;
   top: 75%;
   transform: translateY(-50%);
-  color: #333;
 }
 
 #quiz-container {
@@ -132,32 +134,7 @@ a {
 #quiz-container h2 {
   text-align: center;
   font-size: 2rem;
-  color: #333;
-}
-
-#next-question {
-  display: block;
-  width: 200px;
-  height: 50px;
-  margin: 20px auto;
-  background-color: #667eea;
-  color: #ffffff;
-  border: none;
-  border-radius: 25px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  font-size: 1.5em;
-  text-align: center;
-  line-height: 50px;
-  transition: all 0.1s ease; /* Add transition for smooth animation */
-}
-
-#next-question:active {
-  transform: scale(0.9); /* Reduce size when button is pressed */
-}
-
-#next-question:hover {
-  background-color: #5a67d8;
+  color: #3f3f3f;
 }
 
 #result {
@@ -166,7 +143,6 @@ a {
   box-shadow: 0px 10px 30px -10px rgba(0, 0, 0, 0.1);
   padding: 20px;
   text-align: center;
-  color: #333;
 }
 
 /* styles for the final result text */
@@ -183,9 +159,98 @@ a {
   display: none !important;
 }
 
+#next-question {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin: 20px 0;
+  padding: 16px 36px;
+  border: 4px solid;
+  border-color: transparent;
+  font-size: 16px;
+  background-color: inherit;
+  border-radius: 100px;
+  font-weight: 600;
+  color: #667eea;
+  box-shadow: 0 0 0 2px #667eea;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+#next-question svg {
+  position: absolute;
+  width: 24px;
+  fill: #667eea;
+  z-index: 9;
+  transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+#next-question .arr-1 {
+  right: 16px;
+}
+
+#next-question .arr-2 {
+  left: -25%;
+}
+
+#next-question .circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 20px;
+  height: 20px;
+  background-color: #667eea;
+  border-radius: 50%;
+  opacity: 0;
+  transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+#next-question .text {
+  position: relative;
+  z-index: 1;
+  transform: translateX(-12px);
+  transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+#next-question:hover {
+  box-shadow: 0 0 0 12px transparent;
+  color: #212121;
+  border-radius: 12px;
+}
+
+#next-question:hover .arr-1 {
+  right: -25%;
+}
+
+#next-question:hover .arr-2 {
+  left: 16px;
+}
+
+#next-question:hover .text {
+  transform: translateX(12px);
+}
+
+#next-question:hover svg {
+  fill: #212121;
+}
+
+#next-question:active {
+  scale: 0.95;
+  box-shadow: 0 0 0 4px #667eea;
+}
+
+#next-question:hover .circle {
+  width: 220px;
+  height: 220px;
+  opacity: 1;
+}
+
+
 footer {
   background-color: #e1e5ea;
-  color: #333;
   text-align: center;
   padding: 10px;
   position: fixed;
@@ -230,15 +295,6 @@ footer {
     justify-content: space-between; /* This spaces out the items evenly */
   }
 
-  #next-question {
-    width: 100px; /* Reduce width */
-    height: 25px; /* Reduce height */
-    font-size: 0.8em; /* Reduce font size */
-    line-height: 25px;
-    margin: 0 auto;
-    margin-bottom: 10px; /* Add some margin at the bottom */
-  }
-
   #result {
     padding: 5px; /* Reduce padding */
   }
@@ -250,7 +306,6 @@ footer {
   .setting-button {
     width: 30px; /* Reduce width */
     height: 30px; /* Reduce height */
-    border-radius: 15px; /* Reduce border radius */
   }
 
   #result h2 {
