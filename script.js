@@ -145,6 +145,46 @@ nextButton.addEventListener("click", () => {
     resultContainer.innerHTML = `<h2>Your score: ${score}/${questions.length}</h2>`;
     nextButton.disabled = true; // Disable the button
     nextButton.classList.add("hidden"); // Hide the button
+
+    // Function to get a random final text based on the score
+    function getRandomFinalText(score) {
+      const messageOptions = {
+        // Score <= 5
+        lowScore: [
+          "Your score suggests you might benefit from brushing up on some web dev skills. But hey, practice is essential (and less buggy code is the reward!).",
+          "This score is a fun little challenge! Time to dust off those tutorials and level up your web dev mastery.",
+          "Looks like you might need to borrow some brainpower from a friendly neighborhood developer. (Don't worry, asking for help is a sign of progress!)",
+        ],
+
+        // Score 6-7
+        midScore: [
+          "Solid effort! You clearly have a grasp of web dev, but there's always room for improvement. Keep coding and learning, and you'll be unstoppable!",
+          "Not bad, not bad! This score shows you're on the right track. Now go forth and conquer the web with your newfound skills!",
+          "You're halfway to web dev ninja status! Just a few more bits of knowledge and you'll be crafting masterpieces with your code.",
+        ],
+
+        // Score 8-10
+        highScore: [
+          "Wow, you're a coding rockstar! This score proves you've got the skills to tackle any web dev challenge. Go forth and create!",
+          "Is there anything you can't code? Seriously, your score is amazing! Keep up the fantastic work and inspire others with your talent.",
+          "Feeling a bit smug about your score? Don't worry, we all do sometimes. But seriously, you're awesome! Now go show off your skills to the world.",
+        ],
+      };
+
+      const scoreRange =
+        score <= 5 ? "lowScore" : score <= 7 ? "midScore" : "highScore";
+      const randomIndex = Math.floor(
+        Math.random() * messageOptions[scoreRange].length
+      );
+      const finalText = messageOptions[scoreRange][randomIndex];
+
+      // Return the final text with HTML and CSS
+      return `<p class="final-text">${finalText}</p>`;
+    }
+
+    const finalText = getRandomFinalText(score); // Get the final text based on the score
+    const questionContainer = document.getElementById("question"); // Get the container for the question
+    questionContainer.innerHTML = finalText; // remove the question and add the final text
   } else {
     displayQuestion(); // Otherwise, display the next question
     updateProgressBar(currentQuestion + 1, questions.length); // Update the progress bar

@@ -6,6 +6,7 @@ body {
   color: #333;
   margin: 0;
   padding: 0;
+  padding-bottom: 70px; /* This prevents the footer from overlapping the content */
   box-sizing: border-box;
 }
 
@@ -99,7 +100,7 @@ a {
   height: 20px;
   position: relative;
   border-radius: 10px;
-  margin-bottom: 20px;
+  margin-bottom: 1;
 }
 
 #progress-line {
@@ -148,14 +149,15 @@ a {
   font-size: 1.5em;
   text-align: center;
   line-height: 50px;
-}
-
-#next-question:hover {
-  background-color: #9f7aea; /* This changes the button color when you hover over it */
+  transition: all 0.1s ease; /* Add transition for smooth animation */
 }
 
 #next-question:active {
-  background-color: #5a67d8; /* This changes the button color when you click on it */
+  transform: scale(0.9); /* Reduce size when button is pressed */
+}
+
+#next-question:hover {
+  background-color: #5a67d8;
 }
 
 #result {
@@ -165,6 +167,16 @@ a {
   padding: 20px;
   text-align: center;
   color: #333;
+}
+
+/* styles for the final result text */
+.final-text {
+  font-size: 1.5rem;
+  margin: 20px;
+  color: #667eea;
+  font-weight: bold;
+  line-height: 1.5; /* Add some line height for better readability */
+  text-align: justify; /* Justify the text */
 }
 
 .hidden {
@@ -181,7 +193,6 @@ footer {
   bottom: 0;
   width: 100%;
   border-radius: 15px;
-  box-shadow: 0px 10px 30px -10px rgba(0, 0, 0, 0.1);
 }
 
 /* Responsive styles */
@@ -189,15 +200,11 @@ footer {
 @media screen and (max-width: 768px) {
   /* Adjust styles for mobile devices */
   body {
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-    overflow: auto;
     font-size: 0.8em; /* Reduce the base font size */
   }
 
   main {
-    width: 100%;
+    width: 90%;
     flex: 1 0 auto; /* This allows the main content to grow and shrink as needed */
   }
 
