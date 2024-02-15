@@ -1,6 +1,6 @@
 # Interactive-Quiz
 
-[Interactive Web Development Quiz](https://github.com/Polibeerex/Interactive-Quiz)
+[Interactive Web Development Quiz](https://polibeerex.github.io/Interactive-Quiz/)
 
 ## Project Overview
 
