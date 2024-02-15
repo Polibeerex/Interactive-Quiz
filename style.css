@@ -22,7 +22,7 @@ header {
 }
 
 main {
-  width: 80%;
+  max-width: 50%;
   margin: 20px auto;
 }
 
@@ -42,9 +42,18 @@ h1 {
   color: #667eea;
 }
 
+#settings {
+  margin: 0;
+}
+
+#description {
+  font-size: 1.2em;
+  text-align: center;
+}
+
 h1,
 #description {
-  margin: auto auto 20px auto;
+  align-self: center;
 }
 
 #bg-music {
@@ -283,7 +292,7 @@ footer {
   }
 
   main {
-    width: 90%;
+    max-width: 90%;
     flex: 1 0 auto; /* This allows the main content to grow and shrink as needed */
   }
 
@@ -294,11 +303,22 @@ footer {
   }
 
   h1 {
-    font-size: 1.5em; /* Reduce font size */
+    font-size: 2em; /* Reduce font size */
+  }
+
+  #description {
+    font-size: 1.1em; /* Reduce font size */
+  }
+
+  h1,
+  #description {
+    align-self: flex-start; /* Align to the left */
+    margin-left: 2rem;
+    text-align: left;
   }
 
   #quiz-container h2 {
-    font-size: 2em; /* Reduce font size */
+    font-size: 1.7em; /* Reduce font size */
     margin: 10px 0; /* Add some margin at the top and bottom */
   }
 
@@ -324,5 +344,11 @@ footer {
 
   #result h2 {
     font-size: 1.2em; /* Reduce font size */
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  main {
+    max-width: 800px; /* Adjust as needed */
   }
 }

@@ -189,6 +189,9 @@ nextButton.addEventListener("click", () => {
     displayQuestion(); // Otherwise, display the next question
     updateProgressBar(currentQuestion + 1, questions.length); // Update the progress bar
   }
+
+  // Scroll to the top of the main, so the user can see the next question and the progress bar
+  document.querySelector("main").scrollIntoView({ behavior: "smooth" });
 });
 
 // Display the first question
