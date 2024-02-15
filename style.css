@@ -312,9 +312,10 @@ footer {
 
   h1,
   #description {
-    align-self: flex-start; /* Align to the left */
+
     margin-left: 2rem;
-    text-align: left;
+    margin-right: 2rem;
+    text-align: center
   }
 
   #quiz-container h2 {
