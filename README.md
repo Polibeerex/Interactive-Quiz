@@ -33,3 +33,7 @@ The project includes a mute button that controls the background music. This show
 ### Progress Bar
 
 The project includes a progress bar that updates as the user progresses through the questions. This demonstrates the ability to create dynamic UI elements.
+
+### Dark Theme
+
+The project supports a dark theme, providing an alternative color scheme for the quiz application. This enhances the user experience by allowing users to choose their preferred visual style.
