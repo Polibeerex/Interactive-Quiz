@@ -11,39 +11,30 @@
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
         rel="stylesheet">
     <link rel="icon" href="./image/favicon.png" type="image/png">
-
 </head>
 
 <body>
     <header>
-        <section id="settings">
+        <nav id="settings">
             <div class="setting-button" id="mute-button"><i class="fa-xl fa-solid fa-volume-mute"
                     id="mute-button-icon"></i></div>
-            <!-- Audio -->
-            <audio id="bg-music" autoplay muted loop>
-                <source src="./sound/relax.mp3" type="audio/mpeg">
-                Your browser does not support the audio element.
-            </audio>
-        </section>
+            <div class="setting-button" id="dark-theme-button"><i class="fa-xl fa-solid fa-sun"
+                    id="dark-theme-icon"></i></div>
+        </nav>
         <h1>Interactive Web Development Quiz</h1>
         <p id="description">Test your web development knowledge with our interactive quiz!</p>
-
     </header>
-
     <main>
-        <!-- Progress Bar -->
         <section id="progress-bar">
             <div id="progress-line"></div>
             <p id="current-question">Question: 1 / 10</p>
         </section>
-
-        <!-- Quiz Container -->
         <section id="quiz-container">
             <div id="question">
                 <h2>Question will appear here</h2>
-                <!-- Options will be dynamically populated here -->
             </div>
-            <button id="next-question"> <svg viewBox="0 0 24 24" class="arr-2" xmlns="http://www.w3.org/2000/svg">
+            <button id="next-question">
+                <svg viewBox="0 0 24 24" class="arr-2" xmlns="http://www.w3.org/2000/svg">
                     <path
                         d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z">
                     </path>
@@ -54,24 +45,22 @@
                     <path
                         d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z">
                     </path>
-                </svg></button>
+                </svg>
+            </button>
         </section>
-
-        <!-- Result -->
         <section id="result">
             <h2>Answer all the questions to see your score</h2>
         </section>
     </main>
-
     <footer>
         <p>Created with ❤️ by <a href="https://polibeerex.github.io/Personal-Website/">Andrii Ovchynnikov</a></p>
         <p><a target="_blank" href="https://icons8.com/icon/x27liZQarjtm/quizizz">Quizizz</a> icon by <a target="_blank"
                 href="https://icons8.com">Icons8</a></p>
     </footer>
-
-
-
-    <!-- JavaScript -->
+    <audio id="bg-music" autoplay muted loop>
+        <source src="./sound/relax.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
     <script src="https://kit.fontawesome.com/d31c164a88.js" crossorigin="anonymous"></script>
     <script src="script.js"></script>
 </body>

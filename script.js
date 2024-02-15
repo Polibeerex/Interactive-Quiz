@@ -216,6 +216,35 @@ document.getElementById("mute-button").addEventListener("click", function (e) {
   }
 });
 
+// Function to set the dark theme button icon
+function setDarkThemeIcon() {
+  var darkThemeEnabled = document.body.classList.contains("dark-theme"); // Check if the dark theme is enabled
+  var icon = document.getElementById("dark-theme-icon");
+  icon.classList.remove("fa-moon");
+  icon.classList.remove("fa-sun");
+  icon.classList.add(darkThemeEnabled ? "fa-moon" : "fa-sun");
+}
+
+// Dark theme toggle button event listener
+document
+  .getElementById("dark-theme-button")
+  .addEventListener("click", function () {
+    document.body.classList.toggle("dark-theme"); // Toggle the dark theme class on the body
+    var darkThemeEnabled = document.body.classList.contains("dark-theme"); // Check if the dark theme is enabled
+    localStorage.setItem("dark-theme-enabled", darkThemeEnabled); // Save the user's preference for future visits
+    setDarkThemeIcon(); // Set the dark theme button icon
+  });
+
+// Check if the user has enabled the dark theme
+var darkThemeEnabled = localStorage.getItem("dark-theme-enabled") === "true";
+
+// Apply the dark theme on page load
+if (darkThemeEnabled) {
+  document.body.classList.add("dark-theme");
+}
+
+setDarkThemeIcon(); // Set the dark theme button icon
+
 function updateProgressBar(currentQuestion, totalQuestions) {
   // Calculate the width of the progress line as a percentage
   var progress = (currentQuestion / totalQuestions) * 100;
